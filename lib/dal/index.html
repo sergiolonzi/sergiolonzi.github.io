@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Reporte de accidentes de tránsito en Montevideo.</title>
+		
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<meta name="description" content="" />
+		<link rel="manifest" href="manifest.webmanifest">
+				
+		<link type="text/css" href="css/jquery-ui-1.8.14.custom.css" rel="Stylesheet" />
+		
+		<link rel="stylesheet" type="text/css" href= "static/css/style.css"/>
+		<link rel="stylesheet" type="text/css" href= "static/css/header.css"/>
+		<link rel="stylesheet" type="text/css" href= "static/css/modals.css"/>
+		<link rel="stylesheet" type="text/css" href= "static/css/sidebar.css"/>
+		<link rel="stylesheet" type="text/css" href= "static/css/map.css"/>	
+		 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+		   integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+		<link type="text/css" href="static/css/jquery-ui-1.8.14.custom.css" rel="Stylesheet" />
+		<script type="text/javascript" src="static/js/jquery-1.6.1.min.js"></script>
+		<script type="text/javascript" src="static/js/jquery-ui-1.8.13.custom.min.js"></script>
+        <!-- Make sure you put this AFTER Leaflet's CSS -->
+ 		<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  			   integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+   			   crossorigin=""></script>
+		<script type="text/javascript" src="static/js/public.js"></script>
+
+	</head>
+	<body onload="initialize()">
+		<div id="about-us-modal" title="Acerca de">
+			<p>
+				El propósito de esta aplicación es el análisis de los accidentes de transito en 
+				montevideo identificando los puntos de mayor frecuencia de accidentes.
+			</p>
+			<p>
+				La información fue obtenida de datos abiertos liberados por la Intendencia 
+				de Montevideo, Dependencia responsable Geomática. Para el estudio se utilizaron 
+				datos de todos los accidentes de transito con lesionados por el periodo del 2006-2010. 
+			</p>
+			<p>
+				Esta aplicación fue desarrollada en el entorno del hackaton Desarrollando 
+				América Latina y obtuvo el segundo premio en el evento por Uruguay. 
+				El código fuente esta disponible bajo la licencia GNU AFFERO GENERAL PUBLIC LICENSE.
+			</p>
+			<h2>Miembros del equipo:</h2>
+			<ul>
+				<li>Silvia Sánchez - lailahfsf@gmail.com</li>
+				<li>Horacio Zamora - zamora.horacio@gmail.com</li>
+				<li>Sergio Garcia Spaolonzi - sergio351393@gmail.com</li>
+			</ul>
+			<h2>Agradeciminetos:</h2>
+			<ul>
+				<li>Datos Libres IMM</li>
+				<li>Desarrollando América Latina</li>
+			</ul>
+			<h2>Stack Tecnologico:</h2>
+			<ul>
+				<li>Python</li>
+				<li>Django</li>
+				<li>jQuery</li>
+			</ul>
+    	</div>
+		<div id="ranking-modal" title="Los 20 lugares mas peligrosos">
+			<table id="ranking" border="0">
+			  <thead>
+				<tr>
+					<th>Calle
+					</th><th>Cruce
+					</th><th>Nº Accidentes
+				</th></tr>
+				</thead>
+				<tbody>				
+					
+					<tr>
+						<td>AV ITALIA</td>
+						<td>AV CENTENARIO</td>
+						<td>86</td>
+					</tr>
+					
+					<tr>
+						<td>URUGUAYANA</td>
+						<td>FRANCISCO GOMEZ</td>
+						<td>76</td>
+					</tr>
+					
+					<tr>
+						<td>AV ITALIA</td>
+						<td>AV BOLIVIA</td>
+						<td>75</td>
+					</tr>
+					
+					<tr>
+						<td>AV GRAL FLORES</td>
+						<td>BV JOSE BATLLE Y ORDOÑEZ</td>
+						<td>56</td>
+					</tr>
+					
+					<tr>
+						<td>AV GRAL FLORES</td>
+						<td>BV APARICIO SARAVIA</td>
+						<td>55</td>
+					</tr>
+					
+					<tr>
+						<td>AV GRAL RONDEAU</td>
+						<td>CNEL FRANCISCO TAJES</td>
+						<td>51</td>
+					</tr>
+					
+					<tr>
+						<td>BV GRAL ARTIGAS</td>
+						<td>AV LUIS ALBERTO DE HERRERA</td>
+						<td>51</td>
+					</tr>
+					
+					<tr>
+						<td>AV JOSE BELLONI</td>
+						<td>CNO DOMINGO ARENA</td>
+						<td>50</td>
+					</tr>
+					
+					<tr>
+						<td>PAYSANDU</td>
+						<td>MAGALLANES</td>
+						<td>49</td>
+					</tr>
+					
+					<tr>
+						<td>AV GRAL EUGENIO GARZON</td>
+						<td>LANUS</td>
+						<td>49</td>
+					</tr>
+					
+					<tr>
+						<td>BV GRAL ARTIGAS</td>
+						<td>AV ITALIA</td>
+						<td>49</td>
+					</tr>
+					
+					<tr>
+						<td>AV JOSE PEDRO VARELA</td>
+						<td>ING JOSE SERRATO</td>
+						<td>48</td>
+					</tr>
+					
+					<tr>
+						<td>AV GRAL SAN MARTIN</td>
+						<td>BV APARICIO SARAVIA</td>
+						<td>48</td>
+					</tr>
+					
+					<tr>
+						<td>AV GRAL FLORES</td>
+						<td>AV LUIS ALBERTO DE HERRERA</td>
+						<td>47</td>
+					</tr>
+					
+					<tr>
+						<td>BV GRAL ARTIGAS</td>
+						<td>GOES</td>
+						<td>47</td>
+					</tr>
+					
+					<tr>
+						<td>AV GRAL EUGENIO GARZON</td>
+						<td>AV MILLAN</td>
+						<td>46</td>
+					</tr>
+					
+					<tr>
+						<td>AV ITALIA</td>
+						<td>ALBERTO ZUM FELDE</td>
+						<td>45</td>
+					</tr>
+					
+					<tr>
+						<td>BV JOSE BATLLE Y ORDOÑEZ</td>
+						<td>AV GRAL FLORES</td>
+						<td>45</td>
+					</tr>
+					
+					<tr>
+						<td>AV GRAL FLORES</td>
+						<td>JORGE ISAAC</td>
+						<td>44</td>
+					</tr>
+					
+					<tr>
+						<td>AV ITALIA</td>
+						<td>BOLONIA</td>
+						<td>44</td>
+					</tr>
+					
+				</tbody>				
+			</table>
+			<p id="ranking-footnotes">* Datos obtenidos entre el 2006 y el 2010.</h4>
+		</div>
+		<div id="header">
+			<h1 id="header-top-left">Mapa de los puntos con mayor cantidad de accidentes de Transito</h1></td>
+			<menu  id="header-top-right">
+				<li><a href="#" onclick="showAboutUs();">Acerca de</a></li>
+				<li><a href="#" onclick="ranking();">Puntos más peligrosos</a></li>
+			</menu>
+		</div>
+		<div id="sidebar">
+			<div id="sidebar-menu">
+				<div id="sidebar-form"> 
+					<label>Período</label>
+					<p>
+						<select id="year_filter">
+							<option value="all">2006-2010</option>
+							<option value="2010">2010</option>
+							<option value="2009">2009</option>
+							<option value="2008">2008</option>
+							<option value="2007">2007</option>
+							<option value="2006">2006</option>
+						</select>
+					</p>
+					<hr/>
+				</div>
+				<p>
+					<input type="button" id="update_filter" onclick="update();" value="Actualizar"/>
+				</p>
+				<p id="dangerous_cross">
+					<a  href="#" onclick="ranking();">Esquinas mas peligrosas</a>
+				</p>
+			</div>
+		</div>
+		<div id="map_canvas"></div>
+
+	</body>
+</html>

@@ -1,0 +1,60 @@
+/* All
+----------------------------------*/
+#header {
+	height: 90px;
+	width: 100%;
+	background-image: url(../images/background-top.jpg);
+}
+
+/* header Top Left
+----------------------------------*/
+#header-top-left {
+	width: 50%;
+	padding: 15px;
+	font-size: 23px;
+	color: #EEEEEE;
+	float: left;
+	text-shadow: 1px 1px #333, -1px -1px #444444;
+}
+
+/* header Top Right
+----------------------------------*/
+#header-top-right {
+	float: right;
+	margin-left: 5px;
+	margin-right: 5px;
+	color: #EEEEEE;
+	padding-right: 45px;
+	padding-top: 5px;
+	text-align: right;
+}
+
+#header-top-right a {
+	color: #EEEEEE;
+}
+
+menu {
+	list-style-type: none;
+	margin: 0;
+	margin-top: 10px;
+	padding: 0;
+	overflow: hidden;
+}
+
+menu li {
+	float: left;
+	border-left: 2px solid #EEEEEE;
+}
+
+menu li a {
+	display: block;
+	color: #EEEEEE;
+	text-align: center;
+	padding: 5px 15px;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+menu li a:hover {
+	text-decoration: underline;
+}

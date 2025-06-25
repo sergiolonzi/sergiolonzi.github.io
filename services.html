@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>    
-Stacks.one
+Services
 </title>
     <meta charset="utf-8">
     <meta viewport="with=device-width, initial-scale=1">
@@ -60,32 +60,26 @@ Stacks.one
     </nav>
 
     
-<div class="container-fluid px-0 mx-0 mb-5 position-relative"  style="z-index:0;height: 450px; overflow: hidden;">
+<div class="container-fluid px-0 mx-0 mb-5 position-relative"  style="z-index:0;height: 300px; ">
     <canvas id="abstractCanvas"  style="display: block;overflow: hidden;background-color: #f3f2fa;z-index:-1;">     </canvas>
-    <div class="container-fluid position-absolute" style="z-index:0;top:0px;height: 450px;">
-      <div class="row align-items-center" style="height: 450px;">
-       <div class="col offset-1 py-0">
-          <h1 class="mb-1">TimeHack:</h1>
-          <h2 class="mb-3">Open Source Task Management App</h2>
-          <p ></p>
-          <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-             <a target="_blank" href="https://github.com/sergiolonzi/timehack" type="button" class="btn btn-primary btn-lg px-4 me-md-2">Download</a>
-             <a target="_blank" href="https://github.com/sergiolonzi/timehack/blob/main/doc/INSTALL.rst" type="button" class="btn btn btn-outline-primary btn-lg px-4">Read the Docs</a>
-          </div>
-       </div>
-       <div class="col py-0  align-self-end d-none  d-lg-block  d-xl-block d-xxl-block">
-          <img src="images/hero.png" class="rounded-top border border-secondary d-none d-sm-block" style="height: 300px;">
-       </div>
+    <div class="container-fluid position-absolute" style="z-index:0;top:0px;height: 300px;">
+      <div class="row align-items-center" style="height: 300px;">
+        <div class="col-6 offset-1 py-0">
+          <h1 class="lh-1 lh-1 mb-4">Turn ideas into reality</h1>
+          <h2 class="mb-3">I will develop the solution your company needs.</h2>
+        </div>
+      </div>
     </div>
-  </div>
 </div>
+
+
 <script>
         const canvas = document.getElementById('abstractCanvas');
         const ctx = canvas.getContext('2d');
 
         // Set canvas dimensions to full window size
         canvas.width = window.innerWidth;
-        canvas.height = 430;
+        canvas.height = 300;//window.innerHeight;
 
         // --- Configuration for the background ---
         const shapeCount = 55; // Number of shapes
@@ -194,12 +188,12 @@ Stacks.one
             });
         }
 
-
+        /* Handle window resizing
         window.addEventListener('resize', () => {
             canvas.width = window.innerWidth;
-            canvas.height = 430;
+            canvas.height = window.innerHeight;
             init(); // Re-initialize shapes on resize
-        });
+        });*/
 
         init(); // Initial setup
         animate(); // Start animation
@@ -207,16 +201,15 @@ Stacks.one
 
 <div class="container py-5 mb-5" id="icon-grid">
   <h2 class="pb-2 border-bottom text-body-emphasis fw-bold ">Services for Hire</h2>
-  <p class="pb-2 fs-5 text">I will develop for you a web application on budget and time.</p>  
-  <p class="pb-2 fs-5 text">The service include:</p>  
-  <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-2 g-4 py-2">
+  <p class="pb-2 fs-5 text">Web Application DevelopmentParagraph of text beneath the heading to explain the heading.</p>  
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-2 g-4 py-2">
    <div class="col d-flex align-items-start">
 	<svg xmlns="http://www.w3.org/2000/svg"  width="1.75em" height="1.75em" fill="currentColor" class="bi text-body-secondary flex-shrink-0 me-3" viewBox="0 0 16 16">
 	  <path d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3q0-.405-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708M3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026z"/>
 	</svg>
    <div>
         <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Web Application Development</h3>
-        <p>I will code the web application using Python + Vue.js and following the best programming standards.</p>
+        <p>Paragraph of text beneath the heading to explain the heading.</p>
    </div>
   </div>
   <div class="col d-flex align-items-start">
@@ -225,7 +218,7 @@ Stacks.one
         </svg>
    <div>
         <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">UX/UI Design</h3>
-        <p>I will make sure the web app features a beautifully crafted design following the usability guidelines.</p>
+        <p>Paragraph of text beneath the heading to explain the heading.</p>
    </div>
   </div>
   <div class="col d-flex align-items-start">
@@ -236,7 +229,7 @@ Stacks.one
 	</svg>
    <div>
         <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Deployment & Security</h3>
-        <p>I will install the app on a server, internal or available to public, using the best security practices. </p>
+        <p>Paragraph of text beneath the heading to explain the heading.</p>
    </div>
   </div>
   <div class="col d-flex align-items-start">
@@ -246,12 +239,33 @@ Stacks.one
 	</svg>
    <div>
         <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Also Included</h3>
-        <p>I will keep in touch with the client to follow the progress of the Application in the next months in case there is a need to improve somthing.</p>
+        <p>Paragraph of text beneath the heading to explain the heading.</p>
    </div>
   </div>
 </div>
 </div>  
+<div class="container py-5 mb-5" id="icon-grid">
+  <h2 class="pb-2 border-bottom text-body-emphasis fw-bold ">Development Process</h2>
+  <p class="pb-2 fs-5 text">Web Application DevelopmentParagraph of text beneath the heading to explain the heading.</p>  
 
+</div>
+<div class="container py-5 mb-5" id="icon-grid">
+  <h2 class="pb-2 border-bottom text-body-emphasis fw-bold ">Tech Stack</h2>
+  <p class="pb-2 fs-5 text">Web Application DevelopmentParagraph of text beneath the heading to explain the heading.</p>  
+  <div class="row">
+    <div class="col-lg-4 col-auto">
+         <img id="" class="img-fluid mx-auto p-2"  src="images/python-logo.png"  />
+     </div>
+    <div class="col-lg-4 col-auto">
+                  <img id="" class="img-fluid mx-auto p-2"  src="images/vue-logo.png"  />
+     </div>
+     </div>
+</div>
+<div class="container py-5 mb-5" id="icon-grid">
+  <h2 class="pb-2 border-bottom text-body-emphasis fw-bold ">Security</h2>
+  <p class="pb-2 fs-5 text">Web Application DevelopmentParagraph of text beneath the heading to explain the heading.</p>  
+
+</div>
 
     <footer class="border-top  pb-5 pt-4">
     <div class="container">

@@ -1,0 +1,58 @@
+/* Modals
+----------------------------------*/
+#about-us-modal, #ranking-modal {
+	display: none;
+}
+
+/* About Us
+----------------------------------*/
+#about-us-modal p, #about-us-modal li {
+	font-size: 13px;
+}
+
+#about-us-modal h2 {
+	margin-top: 5px;
+}
+
+#about-us-modal li {
+	margin-left: 35px;
+}
+
+#about-us-modal a {
+	text-decoration: underline;
+}
+
+/* Ranking
+----------------------------------*/
+table#ranking {
+	margin-top: 10px;
+	font-family: Arial;
+	font-weight: normal;
+	border: 1px solid #888;
+	width: 627px;
+	border-spacing: 0px;
+}
+
+table#ranking thead {
+	color: #fefefe;
+	background-color: #888;
+	text-align: center;
+	padding: 5px;
+}
+
+table#ranking td, table#ranking th {
+	padding: 5px;
+	font-size: 11px;
+	border: 1px solid #888;
+}
+
+table#ranking td {
+	text-align: left;
+}
+
+p#footnotes {
+	font-style: oblique;
+	font-weight: normal;
+	font-size: 15px;
+	padding-top: 4px;
+}

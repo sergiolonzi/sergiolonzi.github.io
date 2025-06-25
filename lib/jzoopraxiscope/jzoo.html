@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>JZoopraxiscope - jQuery plugin for making animations from static images.</title>
+		<meta name="description" content="JZoopraxiscope is a jQuery plugin for making animations from static images inspired in Eadweard Muybridge's Zoopraxiscope" />
+		<meta name="author" content="" />
+		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" type="text/css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.js"></script>
+		<script src="jquery.jzoopraxiscope.js"></script>
+		<script type="text/javascript">
+			var optionsAnimation = {
+				'widthFrame' : 627,
+				'widthImage' : 6897,
+				'height' : 390,
+				'image' : 'images/jzoo.jpg'
+			}
+			$(document).ready(function() {
+				$('#animation').jzoopraxiscope(optionsAnimation);
+				$('#play').click(function() {
+					$('#animation').jzoopraxiscope('play');
+					this.src = 'images/playing.png';
+				});
+				$('#stop').click(function() {
+					$('#play').attr("src", 'images/play.png');
+					$('#animation').jzoopraxiscope('stop');
+				});
+			});
+
+		</script>
+	</head>
+	<body style="">
+		<header>
+			<a href=""><img src="images/logo.png" alt="JZoopraxiscope"/></a>
+		</header>
+		<div id="content">
+			<div id="animation-container">
+				<div id="animation" style="border: 1px solid #999; margin: auto;"></div>
+				<div id="animation-controls" style="width:100px;margin: auto">
+					<img  id="stop" src="images/stop.png" />
+					<img  id="play" src="images/play.png" />
+				</div>
+			</div>
+			<p id="description">
+				JZoopraxiscope is a jQuery plugin for making animations from static images inspired in Eadweard Muybridge's Zoopraxiscope.
+			</p>
+			<div style="margin: auto;width:580px;text-align: center;padding: 40px;">
+				
+			</div>
+			
+		</div>
+		<footer>
+			<div class="footer">
+				<p>
+					Sergio Garcia Spaolonzi
+				</p>
+				<p>
+					Image jzoo.jpg belongs to the Eadweard Muybridge Collection (Public Domain).
+				</p>
+		</footer>
+	</body>
+</html>
